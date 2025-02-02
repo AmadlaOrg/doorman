@@ -1,5 +1,5 @@
 package socket
 
 const (
-	socketName = "doorman.sock"
+	SockFileName = "doorman.sock"
 )

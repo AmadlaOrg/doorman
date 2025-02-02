@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"net"
 	"os"
+	"path/filepath"
 )
 
 type ISocket interface{}
@@ -15,8 +16,8 @@ var (
 	bufioNewReader = bufio.NewReader
 )
 
-func (s *SSocket) Connect(data []byte) error {
-	conn, err := netDial("unix", socketPath)
+func (s *SSocket) Connect() error {
+	conn, err := netDial("unix", filepath.Join("/tmp", SockFileName))
 	if err != nil {
 		fmt.Println("Error connecting to Clerk-AWS:", err)
 		os.Exit(1)
