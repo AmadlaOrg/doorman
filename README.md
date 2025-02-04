@@ -17,14 +17,6 @@ But there might be situations where this option is the least secure one. Also, *
 - 🔌 [Unix Domain Sockets](https://man7.org/linux/man-pages/man7/unix.7.html) - Available for Mac OS X 🍎 and Linux 🐧
 - 🚌 [D-Bus](https://www.freedesktop.org/wiki/Software/dbus/) - Only for Linux 🐧
 
-Each of these methods have their advantages and disadvantages.
-
-> [!NOTE]
-> - 🪟 [Named Pipes](https://learn.microsoft.com/en-us/windows/win32/ipc/named-pipes) is the only secure way to exchange
-> that is supported on Windows.
-> - 🔌 [Unix Domain Sockets](https://man7.org/linux/man-pages/man7/unix.7.html) is the only secure option for Mac OS X
-> outside of piping.
-
 ### Security comparison
 
 | Threat Model	                         | 🚌 D-Bus	                                | 🔌 Unix Domain Sockets                 |
