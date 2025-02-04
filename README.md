@@ -21,9 +21,9 @@ Each of these methods have their advantages and disadvantages.
 
 > [!NOTE]
 > - 🪟 [Named Pipes](https://learn.microsoft.com/en-us/windows/win32/ipc/named-pipes) is the only secure way to exchange
-    > that is supported on Windows.
+> that is supported on Windows.
 > - 🔌 [Unix Domain Sockets](https://man7.org/linux/man-pages/man7/unix.7.html) is the only secure option for Mac OS X
-    > outside of piping.
+> outside of piping.
 
 ### Security comparison
 
