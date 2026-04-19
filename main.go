@@ -1,19 +1,32 @@
 package main
 
 import (
-	"github.com/AmadlaOrg/LibraryFramework/cli"
-	"github.com/AmadlaOrg/doorman/internal/cmd"
+	"fmt"
+	"os"
+
+	"github.com/AmadlaOrg/doorman/cmd"
 	"github.com/spf13/cobra"
 )
 
+const (
+	appName = "doorman"
+	version = "1.0.0"
+)
+
+var rootCmd = &cobra.Command{
+	Use:     appName,
+	Short:   "Secrets management CLI with doorman-* plugins",
+	Version: version,
+}
+
+func init() {
+	rootCmd.AddCommand(cmd.GetCmd)
+	rootCmd.AddCommand(cmd.PluginsCmd)
+}
+
 func main() {
-	cli.New(
-		"doorman",
-		"Doorman",
-		"1.0.0",
-		func(rootCmd *cobra.Command) {
-			rootCmd.AddCommand(cmd.SettingsCmd)
-			//rootCmd.AddCommand(cmd.CollectionCmd)
-			//rootCmd.AddCommand(cmd.ComposeCmd)
-		})
+	if err := rootCmd.Execute(); err != nil {
+		fmt.Fprintln(os.Stderr, err)
+		os.Exit(1)
+	}
 }
